@@ -1,0 +1,72 @@
+<!-- <div *ngFor="let item of searchResult" style="display: inline-block">
+  <div class="card">
+        <img *ngIf="item.poster_path" class="ui middle aligned tiny image" src="https://image.tmdb.org/t/p/w500{{item.poster_path}}">
+        <img *ngIf="!item.poster_path" class="ui middle aligned tiny image" src="https://placehold.it/500x740">
+    <div class="card-body">
+      <p class="card-text"> <span>{{item.title}}</span></p>
+    </div>
+  </div>
+</div> -->
+<div class="container" >
+  <h3>Search Result for <span class="font-italic">"{{searchText}}"</span></h3>
+  <hr>
+  <div class="row" *ngIf="isLoading">
+    <div class="col-3">
+      <div class="card content-loader">
+        <facebook-content-loader></facebook-content-loader>
+        <div class="card-body">
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card content-loader">
+        <facebook-content-loader></facebook-content-loader>
+        <div class="card-body">
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card content-loader">
+        <facebook-content-loader></facebook-content-loader>
+        <div class="card-body">
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card content-loader">
+        <facebook-content-loader></facebook-content-loader>
+        <div class="card-body">
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+          <bullet-list-content-loader></bullet-list-content-loader>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="!isLoading">
+    <div class="col-3" *ngFor="let item of searchResult" style="display: inline-block">
+      <div class="card">
+            <img *ngIf="item.poster_path" class="search-img" src="https://image.tmdb.org/t/p/w500{{item.poster_path}}">
+            <img *ngIf="!item.poster_path" class="search-img" src="https://dummyimage.com/300x450/bababa/fff">
+        <div class="card-body">
+          <h6 class="card-text"> <span>{{item.title}}</span></h6>
+          <a (click)="movieClicked(item)" mdbBtn color="primary" mdbWavesEffect>Detail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

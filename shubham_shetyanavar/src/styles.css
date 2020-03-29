@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+.carousel-indicators .active {
+  background-color: red !important;
+}
+
+.carousel-indicators li {
+  background-color: blue!important;
+}
+
+.carousel-indicators {
+  bottom: -50px !important;
+}
+
+.search-img {
+  width: 255px;
+}
+
+.content-loader {
+  height: 445px;
+  padding: 15px;
+  width: 265px;
+}

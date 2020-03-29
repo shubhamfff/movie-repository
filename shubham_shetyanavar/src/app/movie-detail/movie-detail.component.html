@@ -1,0 +1,77 @@
+<div class="my-5 container" *ngIf="isLoading">
+
+  <!-- Grid row -->
+  <div class="row detail-brder">
+
+    <!-- Grid column -->
+    <div class="col-lg-3">
+
+      <!-- Featured image -->
+      <facebook-content-loader></facebook-content-loader>
+      <facebook-content-loader></facebook-content-loader>
+      <facebook-content-loader></facebook-content-loader>
+      <facebook-content-loader></facebook-content-loader>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-9">
+      <bullet-list-content-loader></bullet-list-content-loader>
+    </div>
+    <!-- Grid column -->
+
+  </div>
+
+
+</div>
+
+
+<!-- Section: Blog v.1 -->
+<div class="my-5 container" *ngIf="!isLoading">
+
+  <!-- Grid row -->
+  <div class="row detail-brder" *ngFor="let movie of movies">
+
+    <!-- Grid column -->
+    <div class="col-lg-3">
+
+      <!-- Featured image -->
+      <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
+        <img class="img-fluid movie-img" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.poster_path}}" alt="Sample image">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-9">
+
+      <!-- Category -->
+      <h4 class="font-weight-bold mb-3">
+        {{movie.title}}
+      </h4>
+      <p>{{movie.tagline}}</p>
+      <!-- Post title -->
+      <h3 class="font-weight-bold mb-3"><strong>Overview</strong></h3>
+      <!-- Excerpt -->
+      <p>{{movie.overview}}</p>
+      <!-- Post data -->
+      <p>by <strong *ngFor="let by of movie.production_companies">{{by.name}} ,</strong>  In {{movie.release_date}}</p>
+      <!-- Read more button -->
+      <a mdbBtn color="success" mdbWavesEffect>Play Now</a>
+      <a mdbBtn color="danger" mdbWavesEffect>Add to My List</a>
+      <a mdbBtn color="warning" mdbWavesEffect routerLink="['/movie-list']">back to list</a>
+
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+</div>
+<hr>
+<!-- <a mdbBtn color="warning" mdbWavesEffect routerLink="['/movie-list']">back to list</a> -->

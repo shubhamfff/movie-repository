@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: [ './app.component.css' ]
+})
+export class AppComponent implements OnInit {
+  name = 'Angular 8';
+  list;
+  constructor(private http: HttpClient, public router: Router){
+
+  }
+
+  ngOnInit(){
+
+  }
+
+
+  movieList() {
+    this.router.navigate(['movie-list']);
+  }
+}
